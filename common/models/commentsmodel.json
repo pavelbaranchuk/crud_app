@@ -1,20 +1,20 @@
 {
-  "name": "comments",
+  "name": "commentsmodel",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "comment": {
       "type": "string",
       "required": true
     },
-    "avatar": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "avatarka": {
       "type": "string"
     }
   },

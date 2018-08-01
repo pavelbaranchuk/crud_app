@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 class CommentItem extends Component{
@@ -9,16 +10,28 @@ class CommentItem extends Component{
     }
   }
 
+  onDelete(){
+      let commentId = this.state.item.id;
+      var result = window.confirm("Want to delete?");
+        if (result) {
+          axios.delete(`http://localhost:3000/api/commentsmodels/${commentId}`)
+          .then(response => {
+            this.props.history.push('/');
+          }).catch(err => console.log(err));
+          document.location.reload(true);
+        }
+    }
+
   render(){
     return (
       <div className="row">
-      <div className="col s6 offset-s3"><span className="flow-text">
+      <div className="col s12 m6 offset-m3 l6 offset-l3"><span className="flow-text">
       <div className="row col s12 m12">
           <div className="card">
             <div className="row  valign-wrapper">
               <div className="col s0 m0 l3 image-avatar">
                 <div className="valign-wrapper">
-                  <img className="responsive-img hide-on-med-and-down" src={this.state.item.avatar} alt="" />
+                  <img className="responsive-img hide-on-med-and-down" src={'http://localhost:3000/api/Containers/Pics/download/' + this.state.item.avatarka} alt="" />
                 </div>
               </div>
               <div className="col s12 m12 l9 rest-content">
@@ -29,20 +42,9 @@ class CommentItem extends Component{
                       </div>
                       <div className="col s6 m6 right-align">
                         <h6>
-                        <a id="editLink" href="#">Edit</a>
-                        <span>&nbsp;|&nbsp;</span>
-                        <a id="deleteLink" className="waves-effect waves-light modal-trigger" href="#modal1">Delete</a>
-                        <div id="modal1" className="modal">
-                          <div className="modal-content">
-                            <h4 className="left-align">Modal Header</h4>
-                            <p className="left-align">Are you sure you want to delete this comment?</p>
-                          </div>
-
-                          <div className="modal-footer">
-                            <a href="#!" className="modal-close waves-effect waves-red btn-flat">Disagree</a>
-                            <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
-                          </div>
-                        </div>
+                        <Link to={`/commentsmodels/edit/${this.state.item.id}`}>Edit</Link>
+                          <span>&nbsp;|&nbsp;</span>
+                          <a href="#!" onClick={this.onDelete.bind(this)} >Delete</a>
                         </h6>
                       </div>
                     </div>

@@ -15,7 +15,7 @@ class Comments extends Component{
   }
 
   getComments(){
-    axios.get('http://localhost:3000/api/comments').then(response => {
+    axios.get('http://localhost:3000/api/commentsmodels').then(response => {
       this.setState({comments: response.data}, () =>
     {
       //console.log(this.state);
@@ -32,6 +32,7 @@ class Comments extends Component{
     })
     return (
       <div>
+        <h1>Returned Comments</h1>
         {commentItems}
       </div>
     )

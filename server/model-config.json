@@ -35,12 +35,12 @@
     "dataSource": "db",
     "public": false
   },
-  "comments": {
-    "dataSource": "db",
-    "public": true
-  },
   "Container": {
     "dataSource": "local-storage",
+    "public": true
+  },
+  "commentsmodel": {
+    "dataSource": "db",
     "public": true
   }
 }
