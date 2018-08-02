@@ -8,14 +8,18 @@ class ReplyForm extends Component{
   }
 
   ReplyForm(newComment){
+      let commentId = this.props.match.params.id;
       axios.request({
         method:'post',
-        url:'http://localhost:3000/api/commentsmodels',
-        data: newComment
+        url:`http://localhost:3000/api/commentsmodels/${commentId}`,
+        data: {
+        replies: [...]
+        }
       }).then(response => {
         this.props.history.push('/');
       }).catch(err => console.log(err));
     }
+
 
   fileSelectedHandler = event => {
     this.setState({
@@ -36,7 +40,7 @@ class ReplyForm extends Component{
     .catch(function (error) {
       console.log(error);
     });
-    this.addComment(newComment);
+    this.ReplyForm(newComment);
     document.getElementById("myForm").reset();
   }
 
