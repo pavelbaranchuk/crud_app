@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CommentItem from './CommentItem';
+import ScrollApp from './ScrollApp';
 
 class Comments extends Component{
   constructor(){
@@ -25,6 +26,7 @@ class Comments extends Component{
   }
 
   render(){
+    console.log(this.state.comments);
     const commentItems = this.state.comments.map((comment, i) => {
       return(
         <CommentItem key={comment.id} item={comment} />
@@ -32,8 +34,8 @@ class Comments extends Component{
     })
     return (
       <div>
-        <h1>Returned Comments</h1>
         {commentItems}
+        <ScrollApp/>
       </div>
     )
   }

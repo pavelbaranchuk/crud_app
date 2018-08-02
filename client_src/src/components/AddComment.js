@@ -28,7 +28,8 @@ class AddComment extends Component{
     const newComment = {
       comment: this.refs.comment.value,
       name: this.refs.name.value,
-      avatarka: this.refs.avatarka.value
+      avatarka: this.refs.avatarka.value,
+      replies: []
     }
     fd.append('image', this.state.selectedFile, this.state.selectedFile.name)
     axios.post('http://localhost:3000/api/Containers/pics/upload', fd)
@@ -69,6 +70,7 @@ class AddComment extends Component{
         </form>
         <br />
         <div className="divider"></div>
+        <br />
       </span></div>
       <Comments />
       </div>

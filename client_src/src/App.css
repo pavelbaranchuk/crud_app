@@ -1,0 +1,132 @@
+html, body{
+  height: 100%;
+}
+
+.scroll {
+  background-color: #26a69a;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 5px;
+  border: none;
+
+  &:hover {
+    opacity: 10;
+  }
+}
+
+.arrow-up {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -55px;
+  margin-left: -10px;
+}
+
+$unit: 1rem;
+$white: #FFF;
+$bg-color: #1B2B34;
+$cont-bg-color: #EEE;
+$border-color: #CCD4D8;
+$button-bg-color: #278FBB;
+$button-bg-color-hover: #379CC7;
+$text-color: #00273B;
+@mixin normalize-font(){
+  font-size: 62.5%;
+  font-family: sans-serif;
+  color: $text-color;
+}
+
+body {
+  background-color: $bg-color;
+  @include normalize-font();
+}
+
+.app-cont {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 1.25rem);
+  width: 100%;
+  border: .1rem solid $border-color;
+  border-radius: .2 * $unit;
+  background-color: $cont-bg-color;
+
+  .__center {
+    align-self: center;
+    font-size: 1.5 * $unit;
+    text-align: center;
+
+    .__btn {
+      padding: .75rem 1.25rem;
+      background-color: $button-bg-color;
+      border-radius: .2 * $unit;
+      border: none;
+      color: $white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $button-bg-color-hover;
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  .insult {
+    flex: 1;
+    font-size: 1.4rem;
+    color: red;
+  }
+
+  button:first-of-type {
+    margin-right: 1rem;
+  }
+}
+
+#modal-container {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #000;
+      opacity: .7;
+      z-index: 1;
+    }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+
+    .modal-content {
+      width: 50%;
+      height: 50%;
+      padding: $unit;
+      border-radius: .2 * $unit;
+      background-color: $white;
+      opacity: 1;
+    }
+  }
+}

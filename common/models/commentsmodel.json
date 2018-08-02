@@ -16,6 +16,11 @@
     },
     "avatarka": {
       "type": "string"
+    },
+    "replies": {
+      "type": [
+        "object"
+      ]
     }
   },
   "validations": [],

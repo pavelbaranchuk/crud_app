@@ -11,14 +11,22 @@ class EditComment extends Component{
       name:'',
       avatarka:''
     }
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  handleInputChange(e){
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
 
+    this.setState({
+      [name]: value
+    });
+  }
 
     componentWillMount(){
       this.getCommentDetails();
     }
-
 
     getCommentDetails(){
       let commentId = this.props.match.params.id;
@@ -30,7 +38,7 @@ class EditComment extends Component{
           name: response.data.name,
           avatarka: response.data.avatarka
         }, () => {
-          console.log("Awesome");
+          console.log("getCommentDetails");
           console.log(this.state);
         });
       })
@@ -45,50 +53,55 @@ class EditComment extends Component{
     }).then(response => {
       this.props.history.push('/');
     }).catch(err => console.log(err));
+    console.log("editComment");
   }
 
   onSubmit(e){
+    e.preventDefault();
     const newComment = {
       comment: this.refs.comment.value,
       name: this.refs.name.value,
       avatarka: this.refs.avatarka.value
     }
     this.editComment(newComment);
-    e.preventDefault();
   }
-
 
   render(){
     return (
       <div className="row">
-      <h1>Test</h1>
       <div className="col s12 m6 offset-m3 l6 offset-l3"><span className="flow-text">
-        <form id='myForm' onSubmit={this.fileUploadHandler.bind(this)}>
+        <h4 className="center">Edit Form</h4>
+        <form id='myForm' onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
-            <textarea placeholder="Comment text" required ref="comment" id="textarea1" className="materialize-textarea" data-length="120"></textarea>
+            <textarea  name="comment" value={this.state.comment} style={{ height: 150 }} placeholder="Comment text" ref="comment" id="textarea1" className="materialize-textarea" data-length="120"
+            onChange={this.handleInputChange} ></textarea>
+            <label className="active" htmlFor="textarea1">Comment text</label>
           </div>
 
           <div className="input-field">
-            <input placeholder="Author Name" required type="text" data-length="30" name="name" ref="name" />
+            <input placeholder="Author Name" value={this.state.name} required type="text" data-length="20" name="name" ref="name"
+            onChange={this.handleInputChange} />
+            <label htmlFor="name" className="active">Author name</label>
           </div>
             <div className="file-field input-field">
               <input
-              required
               accept=".png, .jpg"
               style={{display: ''}}
               type="file"
-              onChange={this.fileSelectedHandler.bind(this)}
+              onChange={this.fileSelectedHandler}
               ref={fileInput => this.fileInput = fileInput} />
               <div className="file-path-wrapper">
-                <input placeholder="Change avatar if needed" required="" style={{display: ''}} className="file-path validate" ref="avatarka" type="text" />
+                <input style={{display: 'none'}} value={this.state.avatarka} placeholder="Change avatar if needed" className="file-path validate" ref="avatarka" type="text" />
               </div>
             </div>
-          <button onClick={() => this.fileInput.click()} className="btn col s12 m12 l3 ">File</button>
+          <button style={{display: 'none'}} onClick={() => this.fileInput.click()} className="btn col s12 m12 l3 ">File</button>
+          <input type="submit" value="Change" className="btn col s12 m12 l3"/>
           <span>&nbsp;</span>
-          <input type="submit" value="Comment" className="btn col s12 m12 l3 right" />
+          <Link className="btn col s12 m12 l3 right #ff6066d4 red lighten-1" to={`/`}>Cancel</Link>
+          <br />
+          <br />
+          <div className="divider"></div>
         </form>
-        <br />
-        <div className="divider"></div>
       </span></div>
       </div>
     )
