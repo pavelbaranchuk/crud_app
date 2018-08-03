@@ -3,7 +3,7 @@ import axios from 'axios';
 import CommentItem from './CommentItem';
 import ScrollApp from './ScrollApp';
 
-class Comments extends Component{
+class CommentsList extends Component{
   constructor(){
     super();
     this.state = {
@@ -18,19 +18,22 @@ class Comments extends Component{
   getComments(){
     axios.get('http://localhost:3000/api/commentsmodels').then(response => {
       this.setState({comments: response.data}, () =>
-    {
-      //console.log(this.state);
+    { 
+      console.log("Last and finalthis.state");
+      console.log(this.state);
     })
     })
     .catch(err => console.log(err));
   }
 
   render(){
+    console.log("this.state.comments asasdasdasd");
     console.log(this.state.comments);
     const commentItems = this.state.comments.map((comment, i) => {
       return(
         <CommentItem key={comment.id} item={comment} />
       )
+      
     })
     return (
       <div>
@@ -41,4 +44,4 @@ class Comments extends Component{
   }
 }
 
-export default Comments;
+export default CommentsList;

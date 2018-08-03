@@ -18,9 +18,7 @@
       "type": "string"
     },
     "replies": {
-      "type": [
-        "object"
-      ]
+      "type": "array"
     }
   },
   "validations": [],

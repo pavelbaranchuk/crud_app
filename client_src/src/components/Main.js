@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Comments from './Comments';
 import AddComment from './AddComment';
 import EditComment from './EditComment';
 

@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 /** React components for scrolling back to the top of the page **/
-class ColoredContainer extends React.Component {
-  render () {
-    let containerStyle = {
-      backgroundColor: this.props.color
-    }
-    return <div className="container" style={containerStyle}></div>
-  }
-}
 
 class ScrollButton extends React.Component {
   constructor() {

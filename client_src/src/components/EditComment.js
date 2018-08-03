@@ -38,7 +38,6 @@ class EditComment extends Component{
           name: response.data.name,
           avatarka: response.data.avatarka
         }, () => {
-          console.log("getCommentDetails");
           console.log(this.state);
         });
       })
@@ -47,16 +46,17 @@ class EditComment extends Component{
 
   editComment(newComment){
     axios.request({
-      method:'put',
+      method: 'put',
       url:`http://localhost:3000/api/commentsmodels/${this.state.id}`,
-      data: newComment
-    }).then(response => {
+      data: newComment,
+    })
+    .then(response => {
       this.props.history.push('/');
-    }).catch(err => console.log(err));
-    console.log("editComment");
+    })
+    .catch(err => console.log(err));
   }
 
-  onSubmit(e){
+  onSubmitHandler(e){
     e.preventDefault();
     const newComment = {
       comment: this.refs.comment.value,
@@ -64,46 +64,49 @@ class EditComment extends Component{
       avatarka: this.refs.avatarka.value
     }
     this.editComment(newComment);
+    return false;
   }
 
-  render(){
+  render() {
     return (
-      <div className="row">
-      <div className="col s12 m6 offset-m3 l6 offset-l3"><span className="flow-text">
-        <h4 className="center">Edit Form</h4>
-        <form id='myForm' onSubmit={this.onSubmit.bind(this)}>
-          <div className="input-field">
-            <textarea  name="comment" value={this.state.comment} style={{ height: 150 }} placeholder="Comment text" ref="comment" id="textarea1" className="materialize-textarea" data-length="120"
-            onChange={this.handleInputChange} ></textarea>
-            <label className="active" htmlFor="textarea1">Comment text</label>
-          </div>
-
-          <div className="input-field">
-            <input placeholder="Author Name" value={this.state.name} required type="text" data-length="20" name="name" ref="name"
-            onChange={this.handleInputChange} />
-            <label htmlFor="name" className="active">Author name</label>
-          </div>
-            <div className="file-field input-field">
-              <input
-              accept=".png, .jpg"
-              style={{display: ''}}
-              type="file"
-              onChange={this.fileSelectedHandler}
-              ref={fileInput => this.fileInput = fileInput} />
-              <div className="file-path-wrapper">
-                <input style={{display: 'none'}} value={this.state.avatarka} placeholder="Change avatar if needed" className="file-path validate" ref="avatarka" type="text" />
+      <div>
+        <div className="center title">Edit Form</div>
+        <div className="row">
+          <div className="col s12 m6 offset-m3 l6 offset-l3 flow-text">
+            <form id='myForm' onSubmit={this.onSubmitHandler.bind(this)}>
+              <div className="input-field">
+                <textarea  placeholder="Comment text" name="comment" value={this.state.comment} style={{ height: 150 }} placeholder="Comment text" ref="comment" id="textarea1" className="materialize-textarea" data-length="120"
+                onChange={this.handleInputChange} ></textarea>
+                <label className="active" htmlFor="textarea1">Comment text</label>
               </div>
-            </div>
-          <button style={{display: 'none'}} onClick={() => this.fileInput.click()} className="btn col s12 m12 l3 ">File</button>
-          <input type="submit" value="Change" className="btn col s12 m12 l3"/>
-          <span>&nbsp;</span>
-          <Link className="btn col s12 m12 l3 right #ff6066d4 red lighten-1" to={`/`}>Cancel</Link>
-          <br />
-          <br />
-          <div className="divider"></div>
-        </form>
-      </span></div>
-      </div>
+
+              <div className="input-field">
+                <input placeholder="Author Name" value={this.state.name} required type="text" data-length="20" name="name" ref="name"
+                onChange={this.handleInputChange} />
+                <label htmlFor="name" className="active">Author name</label>
+              </div>
+
+              <div className="file-field input-field">
+                <input
+                accept=".png, .jpg"
+                style={{display: ''}}
+                type="file"
+                onChange={this.fileSelectedHandler}
+                ref={fileInput => this.fileInput = fileInput} />
+                <div className="file-path-wrapper">
+                  <input style={{display: 'none'}} value={this.state.avatarka} placeholder="Change avatar if needed" className="file-path validate" ref="avatarka" type="text" />
+                </div>
+              </div>
+              <button style={{display: 'none'}} onClick={() => this.fileInput.click()} className="btn col s12 m12 l3 ">File</button>
+              <input type="submit" value="Change" className="btn col s12 m12 l3"/>
+              <span>&nbsp;</span>
+              <Link className="btn col s12 m12 l3 right #ff6066d4 red lighten-1" to={`/`}>Cancel</Link>
+              <div className="indent"></div>
+              <div className="divider"></div>
+            </form>
+          </div>
+        </div>
+        </div>
     )
   }
 }
