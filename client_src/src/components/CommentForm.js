@@ -17,7 +17,7 @@ class CommentForm extends Component{
   }
 
   componentDidMount() {
-    if (window.location.hash == "#reload") {
+    if (window.location.hash === "#reload") {
       window.scrollIntoView(document.getElementById("arrow"));
     }
   }

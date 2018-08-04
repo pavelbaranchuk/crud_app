@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 /** React components for scrolling back to the top of the page **/
 
