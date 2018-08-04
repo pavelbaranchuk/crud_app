@@ -7,6 +7,7 @@ class AddComment extends Component{
   render(){
     return (
       <div>
+        <div className="indent"></div>
         <CommentForm />
         <CommentsList />
       </div>

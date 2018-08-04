@@ -19,6 +19,10 @@
     },
     "replies": {
       "type": "array"
+    },
+    "parent": {
+      "type": "string",
+      "default": "top"
     }
   },
   "validations": [],

@@ -21,6 +21,7 @@
     "loopback-component-storage-mongo": "^1.5.1",
     "loopback-connector-mongodb": "^3.5.0",
     "react-dom": "^16.4.2",
+    "scroll-into-view": "^1.9.3",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },

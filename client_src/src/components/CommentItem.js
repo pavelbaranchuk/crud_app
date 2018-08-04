@@ -20,7 +20,7 @@ class CommentItem extends Component {
 
   render(){
     return (
-      <div className="row">
+      <div className="row" id="ell">
         <div className="col s12 m6 offset-m3 l6 offset-l3">
           <span className="flow-text">
             <div className="row col s12 m12">
@@ -28,7 +28,7 @@ class CommentItem extends Component {
                   <div className="row  valign-wrapper">
                     <div className="col s0 m0 l3 image-avatar">
                       <div className="valign-wrapper">
-                        <img className="center responsive-img hide-on-med-and-down" src={'http://localhost:3000/api/Containers/Pics/download/' + this.props.item.avatarka} alt="" />
+                        <img className="center valign-wrapper responsive-img hide-on-med-and-down" src={'http://localhost:3000/api/Containers/Pics/download/' + this.props.item.avatarka} alt="" />
                       </div>
                     </div>
                     <div className="col s12 m12 l9 rest-content">

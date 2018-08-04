@@ -16,6 +16,12 @@ class CommentForm extends Component{
     })
   }
 
+  componentDidMount() {
+    if (window.location.hash == "#reload") {
+      window.scrollIntoView(document.getElementById("arrow"));
+    }
+  }
+
   onSubmitHandler(e) {
     e.preventDefault();
     let arrReply = [];
@@ -27,6 +33,7 @@ class CommentForm extends Component{
       };
                                                             
     if (typeof (this.props.commentId) === "undefined") {        //If no parent comments, then this is not a reply and we will paste it at the bottom of the page
+
         axios.request({
             method:'post',
             url:'http://localhost:3000/api/commentsmodels',
@@ -36,9 +43,12 @@ class CommentForm extends Component{
                 avatarka: this.refs.avatarka.value,
                 replies: []
               }
-          }).then(response => {
+          })
+          .then(() => {
             this.props.history.push('/');
-          }).catch(err => console.log(err));
+          })
+          .catch(err => console.log(err));
+          window.location.hash = 'reload';
                                                                 
     } else {                                  
         if (typeof (this.props.repliesList[0]) !== "undefined") {      
@@ -49,7 +59,6 @@ class CommentForm extends Component{
                 url:`http://localhost:3000/api/commentsmodels/${this.props.commentId}`,
                 data: {
                   replies: arrReply,
-                  id: 5
                 }
               })
               .then(() => {
@@ -81,13 +90,14 @@ class CommentForm extends Component{
         }      
     }
     const formData = new FormData();
-          formData.append('image', this.state.selectedFile, this.state.selectedFile.name);
-          axios.post('http://localhost:3000/api/Containers/pics/upload', formData)
-            .catch(err => {
-              console.log(err);
-            });
+      formData.append('image', this.state.selectedFile, this.state.selectedFile.name);
+      axios.post('http://localhost:3000/api/Containers/pics/upload', formData)
+        .catch(err => {
+          console.log(err);
+        });
 
     document.location.reload(true);
+
     return false;
   }
 
@@ -118,7 +128,7 @@ class CommentForm extends Component{
           </div>
 
           <button onClick={() => this.fileInput.click()} className="btn col s12 m12 l3 ">File</button>
-          
+          <span>&nbsp;</span>
           <input type="submit" value="Comment" className="btn col s12 m12 l3 right" />
         </form>
       </div>

@@ -26,6 +26,7 @@ class EditComment extends Component{
 
     componentWillMount(){
       this.getCommentDetails();
+      window.location.hash = 'edit';
     }
 
     getCommentDetails(){
