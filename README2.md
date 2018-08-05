@@ -33,10 +33,12 @@ Follow these steps to run the project:
 
 ```
 npm install
-npm start (running the server)
+npm start
+```
+* Run the client
+```
 cd client_src
 npm start (running the client)
-
 ```
 
 Here is the picture of an application that you will see 
