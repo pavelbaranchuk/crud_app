@@ -12,7 +12,7 @@ Basic CRUD application that allows you to:
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
@@ -25,15 +25,15 @@ MongoDB
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Let's install loopback
+Follow these steps to run the project:
 
 ```
-npm install -g loopback-cli
+npm install
 npm start
 ```
-here is the picture of an application that you will see https://www.screencast.com/t/hXQOMofy2
+here is the picture of an application that you will see 
+
+![alt text](example.png)
 
 ## Built With
 
