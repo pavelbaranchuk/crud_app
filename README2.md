@@ -29,7 +29,7 @@ Follow these steps to run the project:
 
 * Download and unpack the archive https://goo.gl/rqsj6H
 * Run MongoDB
-* Inside the Comments folder run the following commands:
+* Inside the Commentz folder run the following commands:
 
 ```
 npm install
@@ -38,7 +38,7 @@ npm start
 * Run the client
 ```
 cd client_src
-npm start (running the client)
+npm start
 ```
 
 Here is the picture of an application that you will see 
