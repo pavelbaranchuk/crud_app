@@ -29,7 +29,10 @@ Follow these steps to run the project:
 
 ```
 npm install
-npm start
+npm start (runnibg the server)
+cd client_src
+npm start (runnibg the client)
+
 ```
 
 Here is the picture of an application that you will see 
