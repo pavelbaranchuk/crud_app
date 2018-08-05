@@ -31,9 +31,12 @@ Follow these steps to run the project:
 npm install
 npm start
 ```
-here is the picture of an application that you will see 
 
-![alt text](example.png)
+Here is the picture of an application that you will see 
+
+<p align="center">
+  <img src="example.png" width="750" title="CRUD app">
+</p>
 
 ## Built With
 
