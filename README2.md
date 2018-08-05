@@ -28,6 +28,7 @@ MongoDB
 Follow these steps to run the project:
 
 * Download and unpack the archive https://goo.gl/rqsj6H
+* Run MongoDB
 * Inside the Comments folder run the following commands:
 
 ```
