@@ -29,9 +29,9 @@ Follow these steps to run the project:
 
 ```
 npm install
-npm start (runnibg the server)
+npm start (running the server)
 cd client_src
-npm start (runnibg the client)
+npm start (running the client)
 
 ```
 
