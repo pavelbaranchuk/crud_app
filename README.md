@@ -35,9 +35,10 @@ Follow these steps to run the project:
 npm install
 npm start
 ```
-* Run the client
+* Run the client in a separate command line
 ```
 cd client_src
+npm install
 npm start
 ```
 
