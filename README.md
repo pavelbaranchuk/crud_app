@@ -4,7 +4,7 @@ Basic CRUD application that allows you to:
 * Create a comment
 * Edit comment
 * Delete comment (You will need to confirm this action in a popup)
-* You wil be able to click the "Reply button" and create a reply to an existing message. This reply will be saved to a database but will not be shown on UI (will be implemented in a future releases)
+* You will be able to click the "Reply button" and create a reply to an existing message. This reply will be saved to a database but will not be shown on UI (will be implemented in a future releases)
 * Scroll-to-the-top functionality was added for convenience
 * Web app is responsive
 * Empty field validation is built in
