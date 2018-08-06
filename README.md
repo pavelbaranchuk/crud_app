@@ -27,7 +27,7 @@ MongoDB
 
 Follow these steps to run the project:
 
-* Download and unpack the archive https://goo.gl/rqsj6H
+* Download and unpack the archive https://goo.gl/KWnxrg
 * Run MongoDB
 * Inside the Commentz folder run the following commands:
 
