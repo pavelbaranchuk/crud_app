@@ -1,4 +1,5 @@
-# CRUD Application
+
+# 🖥 CRUD Application
 
 Basic CRUD application that allows you to:
 * Create a comment
@@ -10,20 +11,26 @@ Basic CRUD application that allows you to:
 * Empty field validation is built in
 * You are allowed to choose avatars in "jpg" & "png" formats only (validated on client, server validation will be added soon)
 
-## Getting Started
+## 📜 Summary
 
-These instructions will get you a copy of the project up and running on your local machine.
+<img align="right" width="60" src="./static/logos/React.png">
+
+-   [🚀 Prerequisites](#-Prerequisites)
+-   [🤖 Getting Started](#-Getting Started)
+-   [🚀 Built With](#-Built With)
+
+<br>
 
 ### Prerequisites
 
-You would need the following software installed on your computer
+These instructions will get you a copy of the project up and running on your local machine. You would need the following software installed on your computer:
 
 ```
 Node
 MongoDB
 ```
 
-### Getting Started
+### 🚀 Getting Started
 
 Follow these steps to run the project:
 
