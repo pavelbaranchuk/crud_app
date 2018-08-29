@@ -16,8 +16,8 @@ Basic CRUD application that allows you to:
 <img align="right" width="60" src="./static/logos/React.png">
 
 -   [🚀 Prerequisites](#-Prerequisites)
--   [🤖 Getting Started](#-Getting Started)
--   [🚀 Built With](#-Built With)
+-   [🤖 Getting Started](#-Getting-Started)
+-   [🚀 Built With](#-Built-With)
 
 <br>
 
