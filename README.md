@@ -13,7 +13,7 @@ Basic CRUD application that allows you to:
 
 ## 📜 Summary
 
-<img align="right" width="60" src="./static/logos/React.png">
+<img align="right" width="60" src="https://raw.githubusercontent.com/pavelbaranchuk/facebook_wall/master/static/logos/React.png">
 
 -   [🚀 Prerequisites](#-Prerequisites)
 -   [🤖 Getting Started](#-Getting-Started)
