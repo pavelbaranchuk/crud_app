@@ -1,0 +1,13 @@
+.responsive-img {
+  max-height: 300px;
+  width: 100%;
+  object-fit: 'cover';
+}
+
+/* .image-avatar {
+  overflow: 'hidden';
+} */
+
+.row {
+  margin-bottom: 0;
+}

@@ -86,7 +86,6 @@ class EditComment extends Component {
                   name="comment"
                   value={this.state.comment}
                   style={{height: 150}}
-                  placeholder="Comment text"
                   ref="comment"
                   id="textarea1"
                   className="materialize-textarea"

@@ -34,22 +34,23 @@ MongoDB
 
 Follow these steps to run the project:
 
-* Download and unpack the archive https://goo.gl/KWnxrg
-* Run MongoDB
-* Inside the Commentz folder run the following commands:
+* Clone and run the project
 
 ```
+git cone https://github.com/pavelbaranchuk/crud_app.git
+Run MongoDB
 npm install
 npm start
 ```
 * Run the client in a separate command line
+
 ```
 cd client_src
 npm install
 npm start
 ```
 
-Here is the picture of an application that you will see 
+Here is the example of an application you can have 
 
 <p align="center">
   <img src="example.png" width="750" title="CRUD app">

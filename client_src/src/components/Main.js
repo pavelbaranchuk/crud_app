@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import AddComment from './addComment/AddComment';
 import EditComment from './editComment/EditComment';
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './CommentForm.css';
 
 class CommentForm extends Component {
   constructor(props) {
@@ -119,7 +120,7 @@ class CommentForm extends Component {
     return (
       <div className="row">
         <div className="col s12 m6 offset-m3 l6 offset-l3">
-          <form id="myForm" onSubmit={this.onSubmitHandler.bind(this)}>
+          <form className="myForm" onSubmit={this.onSubmitHandler.bind(this)}>
             <div className="input-field">
               <textarea
                 placeholder="Comment text"

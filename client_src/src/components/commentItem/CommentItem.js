@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import CommentForm from '../commentForm/CommentForm';
+import './CommentItem.css';
 
 class CommentItem extends Component {
   constructor() {
@@ -27,11 +28,6 @@ class CommentItem extends Component {
   }
 
   render() {
-    let myStyle = {
-      maxHeight: '250px',
-      width: '100%',
-      objectFit: 'cover',
-    };
     return (
       <div className="row" id="ell">
         <div className="col s12 m6 offset-m3 l6 offset-l3">
@@ -40,13 +36,11 @@ class CommentItem extends Component {
               <div className="card">
                 <div className="row valign-wrapper">
                   <div
-                    style={{overflow: 'hidden'}}
                     className="col s0 m0 l3 image-avatar"
                   >
                     <div className="valign-wrapper">
                       <img
-                        style={myStyle}
-                        className="center valign-wrapper
+                        className="avatar center valign-wrapper
                         responsive-img hide-on-med-and-down"
                         src={
                           'http://localhost:3000/api/Containers/Pics/download/' +
