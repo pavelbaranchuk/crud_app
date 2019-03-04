@@ -29,7 +29,6 @@ class CommentItem extends Component {
   render() {
     let myStyle = {
       maxHeight: '250px',
-      // height: 'auto',
       width: '100%',
       objectFit: 'cover',
     };
